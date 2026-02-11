@@ -1,0 +1,46 @@
+{
+  "name": "Upgrade-IX-MD",
+  "description": "Upgrade IX Multi-Device WhatsApp Bot",
+  "logo": "https://dl.dropboxusercontent.com/scl/fi/3zkwwcc84bx4jfqyy6c2r/upgrade.jpg",
+  "keywords": ["whatsapp", "baileys", "multi-device", "upgrade-ix"],
+  "repository": "https://github.com/Nick-jpk/Upgrade-IX-MD",
+  "stack": "container",
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "env": {
+    "SESSION_ID": {
+      "description": "Your WhatsApp Session ID. Must begin with 'UPGRADE-BOT:~'",
+      "value": "",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Bot command prefix",
+      "value": ".",
+      "required": false
+    },
+    "OWNER_NUMBER": {
+      "description": "Owner WhatsApp number without + (example: 254712345678)",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}
