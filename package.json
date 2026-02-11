@@ -3,6 +3,7 @@
   "version": "1.8.3",
   "description": "The best WhatsApp bot controlled by VICTONNEL",
   "main": "index.js",
+  "type": "module",
   "engines": {
     "node": ">=20.x",
     "npm": ">=10.x"
