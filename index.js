@@ -2,8 +2,7 @@ import "dotenv/config";
 import fs from "fs";
 import path from "path";
 import P from "pino";
-import {
-  default: makeWASocket,
+import makeWASocket, {
   useMultiFileAuthState,
   DisconnectReason,
   fetchLatestBaileysVersion,
