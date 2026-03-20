@@ -1,6 +1,4 @@
-
-# Fix 1: Complete index.js with the full working connection logic
-index_js_content = '''//═════════════════════════════════//
+'''//═════════════════════════════════//
 
 /*
 🔗 UPGRADE IX MD Bot System - MULTI-PLATFORM EDITION
