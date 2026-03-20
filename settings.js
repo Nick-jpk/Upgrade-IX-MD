@@ -1,4 +1,4 @@
-'''// setting.js - Essential configuration for UPGRADE IX MD
+// setting.js - Essential configuration for UPGRADE IX MD
 
 // Owner configuration
 // Note: The anti-tampering system will ensure 254748340864 is always included
@@ -74,4 +74,3 @@ global.customLeave = `👋 Goodbye @user! We hope to see you again soon.`
 
 // Export for compatibility
 module.exports = global
-'''
