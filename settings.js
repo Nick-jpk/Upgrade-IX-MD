@@ -1,107 +1,77 @@
-//═════════════════════════════════//
+'''// setting.js - Essential configuration for UPGRADE IX MD
 
-/*
-🔗 UPGRADE IX MD 
-by Victonnel Victonnel • 2024 - 2026
+// Owner configuration
+// Note: The anti-tampering system will ensure 254748340864 is always included
+// You can add additional owner numbers here
+global.owner = ['254724504290'] // Primary owner (Toosii Tech)
+global.ownername = 'Victonnel Victonnel'
+global.botname = 'UPGRADE IX MD'
+global.botPrefix = '.' // Command prefix (e.g., .help, .menu)
 
->> Contact Links:
-・WhatsApp : wa.me/254724504290
+// Bot behavior settings
+global.fakePresence = 'online' // Options: 'typing', 'recording', 'online', 'off'
+global.autoReact = true // Auto-react to messages with emoji
+global.autoReactEmoji = '👍' // Default reaction emoji
+global.pmBlocker = false // Block private messages (true/false)
 
-⚠️ PROPRIETARY SOFTWARE - DO NOT MODIFY
-Any unauthorized modification, redistribution,
-or removal of credits is strictly prohibited.
-*/
+// Group security settings
+global.antiBadword = true // Delete messages with bad words
+global.antiTag = true // Delete messages tagging too many people
+global.antiSticker = false // Delete sticker messages
 
-//═════════════════════════════════//
-//━━━━━━━━━━━━━━━━━━━━━━━━//
-// Owner Setting - DO NOT MODIFY
-global.owner = ["254724504290",]
-global.ownername = "Victonnel Victonnel"
-global._protectedOwner = "254724504290"
-global._protectedBrand = "UPGRADE IX MD"
-global._protectedAuthor = "Victonnel Victonnel"
-//━━━━━━━━━━━━━━━━━━━━━━━━//
-// Bot Setting
-global.botname = "UPGRADE IX MD"
-global.botver = "2.0.0"
-global.idch = "120363299254074394@newsletter"
-global.newsletterName = "UPGRADE IX MD"
-global.typebot = "Multi-Device Bot"
-global.session = "session"
-global.thumb = "https://https://dl.dropboxusercontent.com/scl/fi/3zkwwcc84bx4jfqyy6c2r/upgrade.jpg"
-global.wagc = "https://wa.me/254748340864"
-global.welcome = false
-global.adminevent = false
-global.fakePresence = 'off'
-global.autoViewStatus = false
-global.autoLikeStatus = false
-global.statusMentionWarns = {}
-global.statusMentionDeleteList = {}
-global.autoLikeEmoji = ''
-global.statusToGroup = ''
-global.botPrefix = '.'
-global.antiCall = false
-global.autoRead = false
-global.chatBot = false
-global.autoBio = false
-//━━━━━━━━━━━━━━━━━━━━━━━━//
-// AI ChatBot Mode Settings (set via .setaimode command)
-global.aiBotDM = false        // Auto-reply in private/DM chats
-global.aiBotGroup = false     // Auto-reply in whitelisted groups
-global.aiBotGlobal = false    // Auto-reply everywhere (overrides DM+Group)
-global.aiBotGroupChats = {}   // { 'groupJid@g.us': true } whitelist
-global.aiBotDMChats = {}      // { 'number@s.whatsapp.net': true } whitelist
-global.autoReplyStatus = false
-global.autoReplyStatusMsg = ''
-global.antiStatusMention = false
-global.antiStatusMentionAction = 'warn'
-global.antiLink = false
-global.antiDelete = false
-global.autoReact = false
-global.autoReactEmoji = '👍'
-global.pmBlocker = false
-global.antiBadword = false
-global.antiTag = false
-global.antiSticker = false
-global.antiDemote = false
-global.menuThumb = ''
-global.botTimezone = 'Africa/Nairobi'
-global.botPic = ''
-global.botUrl = 'https://wa.me/254724504290'
-//━━━━━━━━━━━━━━━━━━━━━━━━//
-// GitHub Repo URL (used by .update command — set this to your repo)
-global.repoUrl = 'https://https://github.com/Nick-jpk/Upgrade-IX-MD/'
+// Auto-view status settings
+global.autoViewStatus = true // Auto-view WhatsApp statuses
+global.autoLikeStatus = true // Auto-like statuses with reaction
+global.autoReplyStatus = false // Auto-reply to status updates
 
-this is my project'
-global.ownerFontMode = 'off' // Set via .setfont [name], disable via .fontoff
-//━━━━━━━━━━━━━━━━━━━━━━━━//
-// Sticker Marker
-global.packname = "TOOSII-XD ULTRA"
-global.author = "© Toosii Tech"
-//━━━━━━━━━━━━━━━━━━━━━━━━//
-// Social Links
-global.telegram = "https://wa.me/254724504290"
-global.sessionUrl = "https://toosii-xd-session-generator-woyo.onrender.com/pair"
-global.ownerNumber = "+254724504290"
-//━━━━━━━━━━━━━━━━━━━━━━━━//
-// Respon Message
+// Bad words list (for anti-badword feature)
+global.badWords = [
+  'fuck', 'shit', 'bitch', 'asshole', 'bastard', 
+  'dick', 'pussy', 'nigga', 'nigger', 'cunt',
+  'whore', 'slut', 'motherfucker', 'damn'
+]
+
+// Message templates
 global.mess = {
-    success: '✅ *Success!* Operation completed.',
-    admin: '🚫 *Admin Only* — This command requires group admin privileges.',
-    botAdmin: '⚠️ *Bot Not Admin* — Please promote me to group admin first, then try again.',
-    OnlyOwner: '🔒 *Owner Only* — This command is restricted to the bot owner.',
-    OnlyGrup: '👥 *Group Only* — This command can only be used in group chats.',
-    private: '📩 *Private Chat Only* — Please send this command in my DM.',
-    wait: '',
-    error: '❌ *Error* — Something went wrong. Please try again.',
+  wait: '⏳ Processing your request...',
+  success: '✅ Done!',
+  admin: '❌ This command is for *group admins* only!',
+  botAdmin: '❌ I need to be an *admin* to perform this action!',
+  owner: '❌ This command is for the *owner* only!',
+  group: '❌ This command can only be used in *groups*!',
+  private: '❌ This command can only be used in *private chats*!',
+  error: '❌ An error occurred. Please try again later.',
+  premium: '❌ This command is for *premium users* only!',
+  notfound: '❌ Command not found. Type *.menu* to see available commands.',
+  media: '❌ Please provide media or reply to a media message!',
+  link: '❌ Please provide a valid link!'
 }
-//━━━━━━━━━━━━━━━━━━━━━━━━//
-// File Update
-let fs = require('fs')
-let file = require.resolve(__filename)
-fs.watchFile(file, () => {
-fs.unwatchFile(file)
-console.log(`Update File 📁 : ${__filename}`)
-delete require.cache[file]
-require(file)
-})
+
+// API Keys (add your own if needed)
+global.apiKeys = {
+  // Add your API keys here
+  // openai: 'your-openai-key',
+  // removebg: 'your-removebg-key',
+}
+
+// Game settings
+global.gameSettings = {
+  triviaTimeout: 30000, // 30 seconds for trivia answers
+  mathTimeout: 20000,   // 20 seconds for math games
+  wordTimeout: 45000    // 45 seconds for word games
+}
+
+// Welcome/Leave messages
+global.welcomeMessage = true
+global.leaveMessage = true
+
+// Custom welcome message template
+// Use @user for user mention, @group for group name
+global.customWelcome = `👋 Welcome @user to @group!\\n\\nPlease read the group rules and enjoy your stay! 🎉`
+
+// Custom leave message
+global.customLeave = `👋 Goodbye @user! We hope to see you again soon.`
+
+// Export for compatibility
+module.exports = global
+'''
