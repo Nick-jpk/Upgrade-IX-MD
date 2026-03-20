@@ -1,4 +1,4 @@
-'''//═════════════════════════════════//
+//═════════════════════════════════//
 
 /*
 🔗 UPGRADE IX MD Bot System - MULTI-PLATFORM EDITION
@@ -505,4 +505,3 @@ async function connectSession(phone) {
 
 // Start the bot
 startBot()
-'''
